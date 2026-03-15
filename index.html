@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealForgeAI | AI in Healthcare & MedTech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0c;
+            --bg-card: #141418;
+            --accent: #00e5ff;
+            --accent-glow: rgba(0, 229, 255, 0.2);
+            --text-main: #f0f0f5;
+            --text-muted: #a0a0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        nav {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ffffff, #a0a0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        .institution-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.05);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 40px;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow);
+            border-color: rgba(0, 229, 255, 0.3);
+        }
+
+        .service-card.primary {
+            border-top: 3px solid var(--accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .team-member {
+            background: var(--bg-card);
+            padding: 20px 40px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.05);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Footer / Contact */
+        footer {
+            background-color: #050506;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+            color: var(--text-muted);
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #ffffff;
+        }
+
+        .address {
+            max-width: 400px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p.subtitle { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">HealForge<span>AI</span></div>
+        </nav>
+
+        <section class="hero">
+            <div class="institution-badge">
+                Incorporated within National Institute of Technology, Calicut by faculty and researchers.
+            </div>
+            <h1>Transforming Healthcare<br>with Artificial Intelligence</h1>
+            <p class="subtitle">
+                We work at the crucial intersection of AI and modern healthcare, solving critical clinical problems through advanced technology and intelligent MedTech solutions.
+            </p>
+        </section>
+
+        <section id="areas">
+            <h2 class="section-title">Our Focus Areas</h2>
+            <div class="services-grid">
+                <div class="service-card primary">
+                    <h3>MedTech Device Development</h3>
+                    <p>Our primary focus. We engineer cutting-edge medical devices powered by AI to improve diagnostics, monitoring, and patient care.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Products for Hospitals</h3>
+                    <p>Building intuitive software and hardware products tailored to streamline hospital workflows and improve patient outcomes.</p>
+                </div>
+                <div class="service-card">
+                    <h3>AI Classes & Training</h3>
+                    <p>Equipping healthcare professionals and institutions with the knowledge to leverage AI technology effectively and safely.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Hospital Consulting</h3>
+                    <p>Comprehensive consulting for digital transformation, including modern hospital websites and seamless AI integrations.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Evaluation & Consultation</h3>
+                    <p>Rigorous clinical evaluation and strategic consultation to ensure healthcare technologies meet industry standards.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Data Collection & Annotation</h3>
+                    <p>Ethical, high-quality medical data collection and precise annotation services to train robust AI healthcare models.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team">
+            <h2 class="section-title">Leadership & Team</h2>
+            <div class="team-grid">
+                <div class="team-member">Dr. Jayaraj PB</div>
+                <div class="team-member">Arathy Menon</div>
+                <div class="team-member">Kousthub Raja</div>
+                <div class="team-member">Dinoy Johny</div>
+                <div class="team-member">Sisira SR</div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="logo" style="margin-bottom: 20px;">HealForge<span>AI</span></div>
+            <div class="contact-info">
+                <div>Email: <a href="mailto:healforgeai@gmail.com">healforgeai@gmail.com</a></div>
+                <div>Phone: <a href="tel:+919744222303">+91 97442 22303</a></div>
+                <div class="address">
+                    HealForgeAI Private Limited<br>
+                    184/A SAWPARNNIKA, NEW GARDENS, Ayyanthole,<br>
+                    Thrissur, Kerala, India, 680003
+                </div>
+            </div>
+            <p style="color: #444; font-size: 0.8rem; margin-top: 30px;">
+                &copy; 2026 HealForgeAI Private Limited. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
