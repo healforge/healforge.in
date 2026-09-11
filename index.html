@@ -1,288 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealForgeAI | AI in Healthcare & MedTech</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #0a0a0c;
-            --bg-card: #141418;
-            --accent: #00e5ff;
-            --accent-glow: rgba(0, 229, 255, 0.2);
-            --text-main: #f0f0f5;
-            --text-muted: #a0a0b0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navbar */
-        nav {
-            padding: 30px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: var(--text-main);
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #ffffff, #a0a0b0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p.subtitle {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-weight: 300;
-        }
-
-        .institution-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.05);
-            padding: 10px 20px;
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            color: var(--accent);
-            margin-bottom: 40px;
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 50px;
-            text-align: center;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent);
-            box-shadow: 0 0 10px var(--accent-glow);
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background-color: var(--bg-card);
-            padding: 40px 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow);
-            border-color: rgba(0, 229, 255, 0.3);
-        }
-
-        .service-card.primary {
-            border-top: 3px solid var(--accent);
-        }
-
-        .service-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: var(--text-main);
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Team Section */
-        .team-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .team-member {
-            background: var(--bg-card);
-            padding: 20px 40px;
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.05);
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        /* Footer / Contact */
-        footer {
-            background-color: #050506;
-            padding: 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            text-align: center;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 30px;
-            color: var(--text-muted);
-        }
-
-        .contact-info a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: #ffffff;
-        }
-
-        .address {
-            max-width: 400px;
-            margin: 0 auto;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero p.subtitle { font-size: 1rem; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HealForge AI builds clinically relevant, edge-native AI systems for microscopy, digital pathology and accessible healthcare.">
+  <meta name="theme-color" content="#071a2b">
+  <title>HealForge AI | Intelligent healthcare, forged for the real world</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"HealForge AI Private Limited","url":"https://healforge.in","email":"healforgeai@gmail.com","telephone":"+91 97442 22303","address":{"@type":"PostalAddress","addressLocality":"Thrissur","addressRegion":"Kerala","postalCode":"680003","addressCountry":"IN"}}
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="container">
-        <nav>
-            <div class="logo">HealForge<span>AI</span></div>
-        </nav>
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="HealForge AI home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 36 36" role="img">
+            <path d="M18 3.75 30.34 10.9v14.2L18 32.25 5.66 25.1V10.9L18 3.75Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M11 19.5c2.8-6.3 7.4-8.2 14-6.1M12.2 24.2c3.7 1.6 8.7.7 11.7-3.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="12" cy="19" r="1.7" fill="currentColor"/><circle cx="24.5" cy="13.5" r="1.7" fill="currentColor"/><circle cx="23.8" cy="21" r="1.7" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>HealForge <b>AI</b></span>
+      </a>
 
-        <section class="hero">
-            <div class="institution-badge">
-                Incorporated within National Institute of Technology, Calicut by faculty and researchers.
-            </div>
-            <h1>Transforming Healthcare<br>with Artificial Intelligence</h1>
-            <p class="subtitle">
-                We work at the crucial intersection of AI and modern healthcare, solving critical clinical problems through advanced technology and intelligent MedTech solutions.
-            </p>
-        </section>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-button>
+        <span class="sr-only">Open navigation</span><span></span><span></span>
+      </button>
 
-        <section id="areas">
-            <h2 class="section-title">Our Focus Areas</h2>
-            <div class="services-grid">
-                <div class="service-card primary">
-                    <h3>MedTech Device Development</h3>
-                    <p>Our primary focus. We engineer cutting-edge medical devices powered by AI to improve diagnostics, monitoring, and patient care.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Products for Hospitals</h3>
-                    <p>Building intuitive software and hardware products tailored to streamline hospital workflows and improve patient outcomes.</p>
-                </div>
-                <div class="service-card">
-                    <h3>AI Classes & Training</h3>
-                    <p>Equipping healthcare professionals and institutions with the knowledge to leverage AI technology effectively and safely.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Hospital Consulting</h3>
-                    <p>Comprehensive consulting for digital transformation, including modern hospital websites and seamless AI integrations.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Evaluation & Consultation</h3>
-                    <p>Rigorous clinical evaluation and strategic consultation to ensure healthcare technologies meet industry standards.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Data Collection & Annotation</h3>
-                    <p>Ethical, high-quality medical data collection and precise annotation services to train robust AI healthcare models.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="team">
-            <h2 class="section-title">Leadership & Team</h2>
-            <div class="team-grid">
-                <div class="team-member">Dr. Jayaraj PB</div>
-                <div class="team-member">Arathy Menon</div>
-                <div class="team-member">Kousthub Raja</div>
-                <div class="team-member">Dinoy Johny</div>
-                <div class="team-member">Sisira SR</div>
-            </div>
-        </section>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-nav>
+        <a href="#products">Products</a><a href="#approach">Approach</a><a href="#media">Media</a><a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Talk to us <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
+  </header>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="logo" style="margin-bottom: 20px;">HealForge<span>AI</span></div>
-            <div class="contact-info">
-                <div>Email: <a href="mailto:healforgeai@gmail.com">healforgeai@gmail.com</a></div>
-                <div>Phone: <a href="tel:+919744222303">+91 97442 22303</a></div>
-                <div class="address">
-                    HealForgeAI Private Limited<br>
-                    184/A SAWPARNNIKA, NEW GARDENS, Ayyanthole,<br>
-                    Thrissur, Kerala, India, 680003
-                </div>
-            </div>
-            <p style="color: #444; font-size: 0.8rem; margin-top: 30px;">
-                &copy; 2026 HealForgeAI Private Limited. All rights reserved.
-            </p>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><span></span> Healthcare AI, built at the edge</p>
+          <h1>Intelligence that belongs <em>closer to care.</em></h1>
+          <p class="hero-lede">We build clinically relevant AI systems that bring faster insight to microscopes, pathology labs and the people who need care most.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products">Explore our products <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="mailto:healforgeai@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-note">
+            <span class="nitc-monogram" aria-hidden="true">NITC</span>
+            <p>Born from multidisciplinary research at<br><strong>National Institute of Technology Calicut</strong></p>
+          </div>
         </div>
-    </footer>
 
+        <div class="hero-visual" data-reveal>
+          <div class="image-frame"><img src="images/Smart%20Microscope.jpeg" alt="HealForge AI smart microscope with integrated camera, processor and display" width="3120" height="4160" fetchpriority="high"></div>
+          <div class="status-card status-card-top"><span class="pulse-dot"></span><span><strong>Edge AI</strong><small>Local, real-time analysis</small></span></div>
+          <div class="status-card status-card-bottom"><span class="status-icon" aria-hidden="true">◎</span><span><strong>Clinician in control</strong><small>AI-assisted decision support</small></span></div>
+          <p class="image-caption">Smart Microscopy System · Prototype shown at EKASVA 2026</p>
+        </div>
+      </div>
+      <div class="shell principle-strip" aria-label="HealForge principles" data-reveal><span>Clinically relevant</span><i></i><span>AI-powered</span><i></i><span>Research-driven</span><i></i><span>Healthcare focused</span></div>
+    </section>
+
+    <section class="section products-intro" id="products">
+      <div class="shell">
+        <div class="section-heading split-heading" data-reveal>
+          <div><p class="eyebrow"><span></span> Our products</p><h2>One intelligence layer.<br>Built for every setting.</h2></div>
+          <p>From the microscope bench to a phone in the field, our product family keeps inference close to the point of care—private, responsive and practical.</p>
+        </div>
+        <div class="product-index" data-reveal>
+          <a href="#smart-microscope"><span>01</span><strong>Smart Microscope</strong><small>Real-time edge AI</small><b>↘</b></a>
+          <a href="#transformer-vsa"><span>02</span><strong>Transformer-VSA</strong><small>Whole slide diagnostics</small><b>↘</b></a>
+          <a href="#mobile-cytology"><span>03</span><strong>Mobile Cytology</strong><small>Point-of-care screening</small><b>↘</b></a>
+          <a href="#vision-assist"><span>04</span><strong>Vision Assist</strong><small>Conversational awareness</small><b>↘</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature feature-microscope" id="smart-microscope">
+      <div class="shell feature-grid">
+        <div class="feature-copy" data-reveal>
+          <p class="product-number">01 / Smart Microscopy</p><h2>Give any microscope a second pair of eyes.</h2>
+          <p class="feature-lede">Our AI-enabled smart microscopy system upgrades conventional optics with a digital camera, compact embedded processor and LCD—helping specialists locate cells and regions of interest in real time.</p>
+          <ul class="feature-list">
+            <li><span>01</span><div><strong>Runs entirely on-device</strong><p>No internet, cloud compute or remote server required.</p></div></li>
+            <li><span>02</span><div><strong>Made for the existing lab</strong><p>A practical upgrade path for conventional microscopes and familiar workflows.</p></div></li>
+            <li><span>03</span><div><strong>Built to reduce visual load</strong><p>Highlights relevant regions while keeping final clinical judgment with the pathologist.</p></div></li>
+          </ul>
+        </div>
+        <div class="microscope-panel" data-reveal>
+          <div class="sample-visual" aria-label="Abstract representation of a microscopy field with highlighted cells">
+            <svg viewBox="0 0 620 490" role="img" aria-labelledby="sample-title sample-desc">
+              <title id="sample-title">AI-assisted microscopy field</title><desc id="sample-desc">A stylized microscopy field with several outlined regions of interest.</desc>
+              <defs><filter id="soft"><feGaussianBlur stdDeviation="6"/></filter><radialGradient id="cell" cx="40%" cy="40%"><stop offset="0" stop-color="#9be9d9" stop-opacity=".8"/><stop offset="1" stop-color="#2c7b83" stop-opacity=".15"/></radialGradient></defs>
+              <rect width="620" height="490" rx="28" fill="#071b2b"/><g opacity=".8" filter="url(#soft)" fill="url(#cell)"><ellipse cx="92" cy="104" rx="51" ry="42"/><ellipse cx="226" cy="80" rx="44" ry="35"/><ellipse cx="350" cy="127" rx="63" ry="46"/><ellipse cx="503" cy="82" rx="53" ry="39"/><ellipse cx="158" cy="247" rx="66" ry="50"/><ellipse cx="312" cy="274" rx="45" ry="62"/><ellipse cx="494" cy="243" rx="70" ry="48"/><ellipse cx="78" cy="397" rx="43" ry="35"/><ellipse cx="234" cy="408" rx="67" ry="38"/><ellipse cx="426" cy="392" rx="52" ry="56"/><ellipse cx="558" cy="403" rx="37" ry="44"/></g>
+              <g fill="none" stroke="#57e2c2" stroke-width="2"><rect x="277" y="222" width="78" height="92" rx="8"/><rect x="445" y="202" width="103" height="75" rx="8"/><rect x="54" y="70" width="82" height="70" rx="8"/></g><g fill="#57e2c2" font-family="DM Sans, sans-serif" font-size="12"><text x="277" y="213">ROI · 91%</text><text x="445" y="193">ROI · 86%</text><text x="54" y="61">ROI · 78%</text></g><path d="M18 445h164" stroke="#57e2c2" stroke-width="3"/><text x="18" y="470" fill="#d6f5ef" font-family="DM Sans, sans-serif" font-size="13">LIVE FIELD · LOCAL INFERENCE</text>
+            </svg>
+          </div>
+          <div class="capability-grid"><div><small>Initial application</small><strong>Urine cytology</strong></div><div><small>Architecture</small><strong>Edge-native</strong></div><div><small>Connectivity</small><strong>Offline-ready</strong></div><div><small>Expansion path</small><strong>Multi-specialty</strong></div></div>
+        </div>
+      </div>
+      <div class="shell application-line" data-reveal><p>Designed to adapt across</p><div><span>Cervical cytology</span><span>Haematology</span><span>Histopathology</span><span>Other microscopy workflows</span></div></div>
+    </section>
+
+    <section class="section pathology-suite" aria-labelledby="pathology-title">
+      <div class="shell">
+        <div class="section-heading" data-reveal><p class="eyebrow eyebrow-light"><span></span> Digital pathology suite</p><h2 id="pathology-title">The same clinical intelligence,<br>scaled to the workflow.</h2></div>
+        <article class="platform-card desktop-card" id="transformer-vsa" data-reveal>
+          <div class="platform-copy"><p class="product-number">02 / Transformer-VSA</p><h3>Whole slide intelligence for high-volume labs.</h3><p>An end-to-end urine cytology dashboard that processes digital slides over a secure, high-speed hospital LAN. Pathologists can review findings, drill into regions of interest and finalize structured reports from one local workflow.</p><div class="tag-row"><span>Whole Slide Imaging</span><span>Local hospital network</span><span>Desktop CPU</span></div></div>
+          <div class="dashboard-visual" aria-hidden="true">
+            <div class="dash-top"><i></i><i></i><i></i><b>Transformer-VSA</b><span>Case HF-2604</span></div>
+            <div class="dash-body"><div class="dash-sidebar"><span></span><span></span><span></span><span></span></div><div class="slide-map"><svg viewBox="0 0 420 280"><rect width="420" height="280" rx="8" fill="#e9e5e2"/><g fill="#755690" opacity=".44"><ellipse cx="58" cy="53" rx="32" ry="24"/><ellipse cx="148" cy="62" rx="45" ry="29"/><ellipse cx="270" cy="45" rx="38" ry="25"/><ellipse cx="361" cy="74" rx="31" ry="43"/><ellipse cx="92" cy="164" rx="54" ry="37"/><ellipse cx="235" cy="153" rx="67" ry="45"/><ellipse cx="340" cy="184" rx="48" ry="35"/><ellipse cx="184" cy="240" rx="37" ry="26"/></g><g fill="none" stroke="#ff6f61" stroke-width="3"><rect x="190" y="112" width="90" height="83"/><rect x="313" y="145" width="58" height="65"/></g></svg><span class="zoom-control">− &nbsp; 42% &nbsp; +</span></div><div class="findings-panel"><small>AI FINDINGS</small><strong>12</strong><p>regions prioritized</p><hr><span>High confidence</span><span>Review required</span></div></div>
+          </div>
+        </article>
+        <article class="platform-card mobile-card" id="mobile-cytology" data-reveal>
+          <div class="phone-shot"><img src="images/Smart%20Microscope%20App%20Screenshot.jpg" alt="Mobile cytology application showing AI-assisted urine cytology analysis" width="1080" height="2400" loading="lazy"></div>
+          <div class="platform-copy"><p class="product-number">03 / Mobile Cytology</p><h3>Clinical screening that fits in a pocket.</h3><p>Lightweight distilled models run entirely on a smartphone, turning a direct image input into a structured interpretation and clinical report—with no cloud dependency or recurring infrastructure cost.</p><div class="use-case-note"><span>Built for</span><p>Decentralized screening, rural clinics and point-of-care settings where cytopathology expertise may be limited.</p></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section vision-assist" id="vision-assist">
+      <div class="shell vision-grid">
+        <div class="voice-orb" data-reveal aria-hidden="true"><div class="orb-core"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div><p>Listening…</p></div>
+        <div class="feature-copy" data-reveal><p class="product-number">04 / Vision Assist</p><h2>Ask what’s around you. Hear what matters.</h2><p class="feature-lede">A hands-free AI companion for people who are blind or have low vision. Users simply speak to their phone to understand their surroundings, identify what is ahead and ask follow-up questions—without finding or pressing a button.</p><div class="conversation"><p><span>You</span>“What’s in front of me?”</p><p><span>Assist</span>“A doorway is about three steps ahead, slightly to your right.”</p></div><p class="development-note"><span></span> In development · Product details and interface previews coming soon</p></div>
+      </div>
+    </section>
+
+    <section class="section approach" id="approach">
+      <div class="shell">
+        <div class="section-heading split-heading" data-reveal><div><p class="eyebrow"><span></span> How we build</p><h2>Advanced AI only matters<br>when it works in practice.</h2></div><p>We begin with the clinical workflow—not the model—and bring medical insight, engineering and responsible AI into the same product loop.</p></div>
+        <div class="approach-grid" data-reveal><article><span>01</span><h3>Clinically grounded</h3><p>We frame problems with healthcare professionals and build for how care is actually delivered.</p></article><article><span>02</span><h3>Edge by design</h3><p>Local inference supports speed, privacy, offline use and predictable operating costs.</p></article><article><span>03</span><h3>Human in the loop</h3><p>Our systems surface evidence and patterns while final judgment stays with the clinician.</p></article><article><span>04</span><h3>Built to translate</h3><p>Research is engineered into deployable tools for hospitals, laboratories and communities.</p></article></div>
+        <div class="services-band" data-reveal><div><p class="eyebrow eyebrow-light"><span></span> Beyond products</p><h3>Partner with our healthcare AI team.</h3></div><div class="service-list"><span>MedTech device development</span><span>Hospital AI solutions</span><span>AI training</span><span>Digital transformation consulting</span><span>Clinical evaluation</span><span>Medical data &amp; annotation</span></div></div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="shell about-grid">
+        <div class="about-image" data-reveal><img src="images/Healforge%20Stall%20at%20Ekasva%202026.jpeg" alt="HealForge AI exhibition stall at EKASVA 2026 with the smart microscopy prototype" width="1200" height="1600" loading="lazy"><p>HealForge AI at EKASVA 2026</p></div>
+        <div class="about-copy" data-reveal><p class="eyebrow"><span></span> About HealForge</p><h2>Research-led.<br>Care-focused.</h2><p class="about-lede">HealForge AI is a healthcare and MedTech startup founded by faculty and researchers at NIT Calicut. We translate multidisciplinary research into intelligent tools for healthcare professionals, hospitals and patients.</p><div class="vision-statement"><small>Our vision</small><p>To make AI-powered MedTech more accessible—enabling better diagnosis, monitoring, clinical workflows and patient care.</p></div><p>Our work sits at the intersection of clinical needs, artificial intelligence and product engineering. That intersection keeps our technology ambitious, but always anchored in real-world usefulness.</p></div>
+      </div>
+      <div class="shell team-block" data-reveal><div><p class="eyebrow"><span></span> The team</p><h3>A multidisciplinary team forging what comes next.</h3></div><ul aria-label="HealForge AI team"><li>Dr. Jayaraj PB</li><li>Arathy Menon</li><li>Kousthub Raja</li><li>Dinoy Johny</li><li>Sisira SR</li></ul></div>
+    </section>
+
+    <section class="section media" id="media">
+      <div class="shell">
+        <div class="section-heading split-heading" data-reveal><div><p class="eyebrow"><span></span> In the news</p><h2>From the lab bench<br>to the headlines.</h2></div><p>Independent coverage of the team turning conventional microscopes into responsive, AI-assisted medical imaging systems.</p></div>
+        <div class="press-grid">
+          <a class="press-card press-feature" href="https://www.newindianexpress.com/states/kerala/2026/Aug/22/nit-calicuts-smart-microscope-puts-ai-to-work-at-the-doctors-eye" target="_blank" rel="noopener noreferrer" data-reveal><div class="press-image"><img src="images/Newspaper%20clipping%20Indian%20Express.jpeg" alt="The New Indian Express newspaper clipping featuring the NIT Calicut smart microscope" width="3120" height="4160" loading="lazy"></div><div class="press-info"><span>The New Indian Express · Aug 2026</span><h3>NIT Calicut’s smart microscope puts AI to work at the doctor’s eye</h3><p>Read article <b aria-hidden="true">↗</b></p></div></a>
+          <a class="press-card" href="https://www.onmanorama.com/news/kerala/2026/08/22/nit-calicut-researchers-develop-ai-powered-smart-microscope-for-medical-imaging.html" target="_blank" rel="noopener noreferrer" data-reveal><div class="press-image"><img src="images/Newspaper%20clipping%20manorama.jpeg" alt="Malayala Manorama newspaper clipping about the NIT Calicut AI smart microscope" width="922" height="1321" loading="lazy"></div><div class="press-info"><span>Onmanorama · Aug 2026</span><h3>AI-powered smart microscopy system created to revolutionise diagnosis</h3><p>Read article <b aria-hidden="true">↗</b></p></div></a>
+          <article class="press-card" data-reveal><div class="press-image press-image-wide"><img src="images/Newspaper%20clipping%20Deshabhimani.jpeg" alt="Deshabhimani newspaper clipping about the AI smart microscopy system" width="1599" height="912" loading="lazy"></div><div class="press-info"><span>Deshabhimani · Aug 2026</span><h3>Malayalam press coverage of NIT Calicut’s AI smart microscopy system</h3><p>Print coverage</p></div></article>
+        </div>
+        <div class="more-press" data-reveal><p>More coverage</p><a href="https://swarajyamag.com/news-brief/nit-calicut-team-turns-regular-microscope-into-ai-powered-cancer-screening-device" target="_blank" rel="noopener noreferrer"><span>Swarajya</span><strong>NIT Calicut team turns regular microscope into AI-powered cancer screening device</strong><b aria-hidden="true">↗</b></a><a href="https://www.madhyamam.com/technology/news/nit-researchers-develop-ai-powered-smart-microscope-1547982" target="_blank" rel="noopener noreferrer"><span>Madhyamam</span><strong>NIT researchers develop AI-powered smart microscope</strong><b aria-hidden="true">↗</b></a></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-orb" aria-hidden="true"></div>
+      <div class="shell contact-grid" data-reveal><div><p class="eyebrow eyebrow-light"><span></span> Work with us</p><h2>Let’s build<br>better care.</h2></div><div class="contact-copy"><p>For clinical collaborations, hospital partnerships, product enquiries and research translation.</p><a class="contact-email" href="mailto:healforgeai@gmail.com">healforgeai@gmail.com <span aria-hidden="true">↗</span></a><a class="contact-phone" href="tel:+919744222303">+91 97442 22303</a></div></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <a class="brand brand-footer" href="#top" aria-label="HealForge AI home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M18 3.75 30.34 10.9v14.2L18 32.25 5.66 25.1V10.9L18 3.75Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 19.5c2.8-6.3 7.4-8.2 14-6.1M12.2 24.2c3.7 1.6 8.7.7 11.7-3.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span>HealForge <b>AI</b></span></a>
+      <div class="footer-address"><p>HealForgeAI Private Limited</p><p>184/A Sawparnnika, New Gardens<br>Ayyanthole, Thrissur, Kerala 680003</p></div>
+      <div class="footer-links"><a href="#products">Products</a><a href="#approach">Approach</a><a href="#media">Media</a><a href="#about">About</a></div>
+      <p class="copyright">© <span data-year>2026</span> HealForgeAI Private Limited</p>
+    </div>
+  </footer>
 </body>
 </html>
